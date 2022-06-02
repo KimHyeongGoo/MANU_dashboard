@@ -1,0 +1,208 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} UI Icons {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<style>
+  img {
+    width: 100%;
+    height: 100px;
+  }
+</style>
+
+
+<div class="card">
+  <div class="card-header card-header-tabs card-header-primary">
+    <h3 class="card-title">데이터셋</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">산업 빅데이터 수집 데이터셋</h5>
+  </div>
+</div>
+
+
+<div style="padding: 0% 4% 0% 4%">
+  <div class="row" id="toppest">
+    <div class="col-sm-12">
+      <button id="back_button" class="btn btn-light btn-block" onclick="back();" style="display:none;">창닫기</button>
+    </div>
+    <iframe id="frame" width="100%" style="display:none; height: 80vh" frameborder="0" scrolling="auto"></iframe>
+  </div>
+</div>
+
+
+<div style="padding: 2% 4% 2% 4%">
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://keties.iptime.org:8090/tablemodelview/list/');">
+          <center>
+            <img style="
+          border: 3px solid rgb(168, 240, 176);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(1) 데이터셋 목록 (A유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(1) 수집 데이터셋 목록</h4>
+            <p class="card-category">데이터 시스템에 업로드된 데이터셋 목록 확인</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest"
+          onClick="to_href('http://keties.iptime.org:8085/d/kube-cluster/manufacturing-data?orgId=1&refresh=10s');">
+          <center>
+            <img style="
+          border: 3px solid rgb(168, 240, 176);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(6) 설비 현황 모니터링 (A유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(2) 데이터 현황 모니터링</h4>
+            <p class="card-category">산업 데이터 현황 모니터링</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://keties.iptime.org:8090/chart/list/');">
+          <center>
+            <img style="
+          border: 3px solid rgb(168, 240, 176);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(1) 데이터셋 목록 (A유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(3) 데이터셋 차트 기반 시각화</h4>
+            <p class="card-category">수집된 데이터셋 시각화</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_typeB_list_dataset.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(168, 240, 176);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/B유형/(1) 데이터셋 목록 (B유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">생기원-(1) 수집 데이터셋 목록</h4>
+            <p class="card-category">데이터 시스템에 업로드된 데이터셋 목록 확인</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest"
+          onClick="init_frame('http://222.98.122.37:19210/#/apps/ml/asset/object_storage/0003-apps-ml-im');">
+          <center>
+            <img style="
+          border: 3px solid rgb(168, 240, 176);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/C유형/(1) 데이터셋 목록 (C유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(1) 수집 데이터셋 목록</h4>
+            <p class="card-category">데이터 시스템에 업로드된 데이터셋 목록 확인</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+  function init_frame(html_file) {
+    document.getElementById("frame").src = html_file
+    document.getElementById("back_button").style.display = "block"
+    document.getElementById("frame").style.display = "block"
+  }
+
+  function to_href(url) {
+    window.open(url)
+  }
+
+  function back() {
+    document.getElementById("back_button").style.display = "none"
+    document.getElementById("frame").style.display = "none"
+  }
+
+  // URL parameter 체크 후 함수 실행
+  var Request = function () {
+    this.getParameter = function (name) {
+      var rtnval = '';
+      var nowAddress = unescape(location.href);
+      var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,
+        nowAddress.length)).split('&');
+      for (var i = 0; i < parameters.length; i++) {
+        var varName = parameters[i].split('=')[0];
+        if (varName.toUpperCase() == name.toUpperCase()) {
+          rtnval = parameters[i].split('=')[1];
+          break;
+        }
+      }
+      return rtnval;
+    }
+  }
+  var request = new Request();
+  var paramValue = request.getParameter('select');
+  // 파라미터 값에 따른 함수(iframe 생성) 실행
+  if (paramValue.length > 0) {
+    init_frame(paramValue);
+  }
+</script>
+
+{% endblock javascripts %}

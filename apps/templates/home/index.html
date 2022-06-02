@@ -1,0 +1,30 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Dashboard {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+
+<div class="row">
+  <iframe src="http://keties.iptime.org:8000/" style="display:block; width:90vw; height: 80vh" frameborder="0" scrolling="auto">
+  </iframe>
+</div>
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+  <script>
+    
+    $.ajaxSetup({
+      headers: { "X-CSRFToken": '{{csrf_token}}' }
+    });
+  </script>
+
+{% endblock javascripts %}

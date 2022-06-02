@@ -1,0 +1,460 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Page User {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<style>
+  img {
+    width: 100%;
+    height: 100px;
+  }
+</style>
+
+
+<div class="card">
+  <div class="card-header card-header-tabs card-header-primary">
+    <h3 class="card-title">소프트웨어 기능</h3>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">산업 빅데이터 수집, 분석 SW 실행</h5>
+  </div>
+</div>
+
+<div style="padding: 0% 4% 0% 4%">
+  <div class="row" id="toppest">
+    <div class="col-sm-12">
+      <button id="back_button" class="btn btn-light btn-block" onclick="back();" style="display:none;">창닫기</button>
+    </div>
+    <iframe id="frame" width="100%" style="display:none; height: 80vh" frameborder="0" scrolling="auto"></iframe>
+  </div>
+</div>
+
+
+<div style="padding: 2% 4% 2% 4%">
+  <div class="row">
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_preproc.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/전처리_icon.png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(1) 데이터 전처리</h4>
+            <p class="card-category">현장 데이터 수집 원본 데이터 전송, DB 저장 시계열 데이터 수집</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_init_data.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(2) 데이터셋 구성 (A유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(2) 데이터셋 구성</h4>
+            <p class="card-category">CSV 스캔 및 변환, 조건별 데이터 추출, 데이터셋 구성</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://keti-ev1.iptime.org:22228/notebooks/MD_demo_training.ipynb');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(3) 데이터 학습 (A유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(3) 데이터 머신러닝 학습</h4>
+            <p class="card-category">XGBoost 머신러닝 기반 데이터 학습 및 모델 저장</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://keti-ev1.iptime.org:22228/notebooks/MD_demo_test.ipynb');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(4) 데이터 학습모델 기반 예측 (A유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(4) 데이터 학습모델 기반 예측</h4>
+            <p class="card-category">XGBoost 머신러닝 학습모델 기반 데이터 상승구간 예측</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://106.255.89.70:20000/admin/predictions/prediction/');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(4) 데이터 학습모델 기반 예측 (A-2유형).jpg" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(5-1) 비정형 데이터 머신러닝 객체 인식 (결과)</h4>
+            <p class="card-category">YOLO 기반 학습을 통한 영상 내 객체 인식</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest"
+          onClick="init_frame('http://bigsoft.iptime.org:2243/notebooks/demo_ML/demo_pytorch_Faster_R_CNN.ipynb');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(4) 데이터 학습모델 기반 예측 (A-3유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(5-2) 비정형 데이터 머신러닝 객체 인식 (학습 코드)</h4>
+            <p class="card-category">이미지 라벨링 및 머신러닝 학습 기반 데이터 분류</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_analysis.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(5) 데이터 분석 (A유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">KETI-(6) 데이터 통계 분석</h4>
+            <p class="card-category">다양한 차트 기반 데이터 분석</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_typeB_upload_dataset.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/B유형/(2) 데이터 업로드 (B유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">생기원-(1) 데이터 업로드</h4>
+            <p class="card-category">CSV, Excel 파일, 외부 DB, 공동활용플랫폼 데이터 등을 데이터 시스템에 업로드</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_typeB_train.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/B유형/(4) 데이터 학습모델 기반 예측 (B유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">생기원-(2) 데이터 학습모델 기반 예측</h4>
+            <p class="card-category">제조 데이터 머신러닝 학습 및 판단</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> updated 4 minutes ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('?select=sw_typeB_analysis.html');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/B유형/(5) 데이터 분석 (B유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">생기원-(3) 데이터 분석</h4>
+            <p class="card-category">샘플링 사이즈 기반 전처리 완료된 데이터 그래프 조회, 분석</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://222.98.122.37:19215/sharestoragewrite');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/C유형/(2) 데이터 업로드 (C유형).png" alt="factory">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(1) 데이터 업로드</h4>
+            <p class="card-category">CSV, Excel 파일, JPEG 등, 정형/비정형 파일들을 데이터 시스템에 업로드</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="100" height="auto">
+        <a href="#toppest" onClick="init_frame('http://222.98.122.37:19210/#/apps/ml/dataset/132951');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/데이터_전처리_C유형.png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(2) 데이터 전처리</h4>
+            <p class="card-category">현장 데이터 수집 원본 데이터 전송 및 데이터셋 구성</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://222.98.122.37:19210/#/apps/ml/mlflow/43301/edit');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(3) 데이터 머신러닝 학습 (C유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(3) 데이터 머신러닝 학습</h4>
+            <p class="card-category">데이터셋 분석노드 설정, 머신러인 학습 및 판단 기능</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="init_frame('http://222.98.122.37:19210/#/apps/ml-vb/va/87600');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(5) 데이터 분석 (C유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(4)데이터 분석</h4>
+            <p class="card-category">설비 진동데이터 그래프 등 분석</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="col-sm-12 col-md-3">
+      <div class="card" width="auto" height="auto">
+        <a href="#toppest" onClick="to_href('http://210.109.63.156:8082/');">
+          <center>
+            <img style="
+          border: 3px solid rgb(137, 211, 241);
+          border-radius: 7px;
+          -moz-border-radius: 7px;
+          -khtml-border-radius: 7px;
+          -webkit-border-radius: 7px;
+          " src="../static/assets/img/A유형/(6) 설비 현황 모니터링 (C유형).png" alt="sight">
+          </center>
+          <div class="card-body">
+            <h4 class="card-title">위즈코어-(5) 설비 현황 모니터링</h4>
+            <p class="card-category">설비현황, 가공현황 모니터링</p>
+          </div>
+          <div class="card-footer">
+            <div class="stats">
+              <i class="material-icons">access_time</i> campaign sent 2 days ago
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+<script>
+  function init_frame(html_file) {
+    document.getElementById("back_button").style.display = "block";
+    document.getElementById("frame").style.display = "block";
+    document.getElementById("frame").src = html_file;
+    console.log(html_file)
+    console.log(process.cwd())
+  }
+
+  function to_href(url) {
+    window.open(url)
+  }
+
+  function back() {
+    if (document.getElementById("back_button").innerText == "창닫기") {
+      document.getElementById("back_button").style.display = "none";
+      document.getElementById("frame").style.display = "none";
+    }
+    else {
+      history.back()
+      document.getElementById("back_button").innerText = "창닫기"
+    }
+  }
+
+  function print(st) {
+    alert(st);
+  }
+
+  // URL parameter 체크 후 함수 실행
+  var Request = function () {
+    this.getParameter = function (name) {
+      var rtnval = '';
+      var nowAddress = unescape(location.href);
+      var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,
+        nowAddress.length)).split('&');
+      for (var i = 0; i < parameters.length; i++) {
+        var varName = parameters[i].split('=')[0];
+        if (varName.toUpperCase() == name.toUpperCase()) {
+          rtnval = parameters[i].split('=')[1];
+          break;
+        }
+      }
+      return rtnval;
+    }
+  }
+  var request = new Request();
+  var paramValue = request.getParameter('select');
+  // 파라미터 값에 따른 함수(iframe 생성) 실행
+  if (paramValue.length > 0) {
+    init_frame(paramValue)
+  }
+
+</script>
+
+{% endblock javascripts %}

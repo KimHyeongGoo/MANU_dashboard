@@ -1,0 +1,64 @@
+{% block content %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 4</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+  <br>
+  <div style="padding: 1% 2% 1% 2%">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            특정 조건(예. 상승 구간) 통계 분석
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">코드 설명</h5>
+            <p class="card-text">특정 조건에 대한 데이터를 통해 각 필드의 값에 따른 통계 분석 수행 및 차트 출력</p>
+            <center><button class="btn btn-primary" id="preproc_1"
+                onclick="change_src('http://bigsoft.iptime.org:8004/tree/SW-Platform/web/material-dashboard-django/sw/analysis/statistics_analysis/statistics_analysis.ipynb');">실행</a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            특정 조건(예. 상승 속도) 특징 및 주요 필드 분석
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">코드 설명</h5>
+            <p class="card-text">특정 조건에 대한 데이터를 통해 특징 추출 및 관련 필드 연관 여부 분석 수행 및 차트 출력</p>
+            <center><button class="btn btn-primary" id="preproc_2"
+                onclick="change_src('http://bigsoft.iptime.org:8004/tree/SW-Platform/web/material-dashboard-django/sw/analysis/ascending_speed_analysis/ascending_statistics.ipynb');">실행</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+
+{% endblock javascripts %}
+
+<script>
+
+  function click_start(url) {
+    parent.to_href(url);
+  }
+
+  function change_src(url) {
+    location.href = url;
+    parent.document.getElementById("back_button").innerText = "뒤로";
+  }
+
+</script>

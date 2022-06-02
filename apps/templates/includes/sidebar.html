@@ -1,0 +1,51 @@
+<div class="sidebar" data-color="purple" data-background-color="white" data-image="/static/assets/img/sidebar-1.jpg">
+  <div class="logo">
+    <a rel="noopener noreferrer" href="/index.html" class="simple-text logo-normal">
+      <center>
+        <img src="../static/assets/img/KETI_CI.png" alt="factory" width="80%" height="80%">
+      </center>
+    </a>
+  </div>
+  <div class="sidebar-wrapper">
+    <ul class="nav">
+      {% if request.user.is_authenticated %}
+
+      <li class="nav-item {% if 'index' in segment %} active {% endif %}">
+        <a class="nav-link" href="/">
+          <i class="material-icons">dashboard</i>
+          <p>Dashboard</p>
+        </a>
+      <li class="nav-item {% if 'dataset' in segment %} active {% endif %}">
+        <a class="nav-link" href="/dataset.html">
+          <i class="material-icons">bubble_chart</i>
+          <p>데이터셋</p>
+        </a>
+      </li>
+      <li class="nav-item {% if 'sw' in segment %} active {% endif %}">
+        <a class="nav-link" href="/sw.html">
+          <i class="material-icons">code</i>
+          <p>소프트웨어 기능</p>
+        </a>
+      </li>
+      </li>
+      <li class="nav-item {% if 'empirical_case' in segment %} active {% endif %}">
+        <a class="nav-link" href="/empirical_case.html">
+          <i class="material-icons">language</i>
+          <p>실증 사례</p>
+        </a>
+      </li>
+      <li class="nav-item ">
+        <a class="nav-link" href="{% url 'logout' %}">
+          <i class="material-icons">directions_run</i>
+          <p>Logout</p>
+        </a>
+      </li>
+
+      {% else %}
+
+
+      {% endif %}
+    </ul>
+  </div>
+
+</div>

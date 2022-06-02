@@ -1,0 +1,65 @@
+{% block content %}
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrap 4</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+</head>
+
+<body>
+
+  <br>
+  <div style="padding: 1% 2% 1% 2%">
+    <div class="row">
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            1. 파일 오류 검사
+          </div>
+          <img src="images/card-image.png" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">코드 설명</h5>
+            <p class="card-text">CSV 파일의 오류사항(데이터가 비어있는 경우, 필드가 비정상인 경우, 파일이 깨진 경우 등) 체크 및 수정.</p>
+            <center><button class="btn btn-primary" id="preproc_1"
+                onclick="change_src('http://bigsoft.iptime.org:8004/tree/SW-Platform/web/material-dashboard-django/sw/preproc/1_file_check/1st_preproc.ipynb');">실행</a>
+            </center>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4">
+        <div class="card">
+          <div class="card-header">
+            2. 세부 전처리 및 규격화
+          </div>
+          <img src="images/card-image.png" alt="" />
+          <div class="card-body">
+            <h5 class="card-title">코드 설명</h5>
+            <p class="card-text">CSV 파일의 필드 명, 데이터 라인의 필드 값 등 데이터 값 변경 및 이상치 처리.</p>
+            <center><button class="btn btn-primary" id="preproc_2"
+                onclick="change_src('http://bigsoft.iptime.org:8004/tree/SW-Platform/web/material-dashboard-django/sw/preproc/2_data_preproc/2nd_preproc.ipynb');">실행</a>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}
+<script>
+
+  function click_start(url) {
+    parent.to_href(url)
+  }
+
+  function change_src(url) {
+    location.href = url;
+    parent.document.getElementById("back_button").innerText = "뒤로";
+  }
+
+</script>
+{% endblock javascripts %}
