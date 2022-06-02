@@ -37,44 +37,45 @@ $ # Access the web app in browser: http://127.0.0.1:8000/
    |-- core/                               
    |    |-- settings.py                    # 외부 접근 허용 등 주요 설정 파일
    |    |-- wsgi.py                        
-   |    |-- urls.py                        
+   |    ┕-- urls.py                        
    |
    |-- apps/
    |    |
    |    |-- home/                          
-   |    |    |-- views.py                  # Serve HTML pages for authenticated users
-   |    |    |-- urls.py                   # Define some super simple routes  
+   |    |    ┕-- views.py                  # Serve HTML pages for authenticated users
+   |    |    ┕-- urls.py                   # Define some super simple routes  
    |    |
    |    |-- authentication/                # Handles auth routes (login and register)
-   |    |    |-- urls.py                   # Define authentication routes  
-   |    |    |-- views.py                  # Handles login and registration  
-   |    |    |-- forms.py                  # Define auth forms (login and register) 
+   |    |    ┕-- urls.py                   # Define authentication routes  
+   |    |    ┕-- views.py                  # Handles login and registration  
+   |    |    ┕-- forms.py                  # Define auth forms (login and register) 
    |    |
    |    |-- static/
-   |    |    |-- <css, JS, images>         # CSS files, Javascripts files
+   |    |    ┕-- <css, JS, images>         # CSS files, Javascripts files
    |    |
    |    |-- templates/                     # Templates used to render pages
    |         |-- includes/                 # HTML chunks and components
    |         |    |-- navigation.html      # Top menu component (사이드바 - 탭 메뉴)
    |         |    |-- sidebar.html         # Sidebar component (상단 바)
    |         |    |-- footer.html          # App Footer (하단 바)
-   |         |    |-- scripts.html         # Scripts common to all pages
+   |         |    ┕-- scripts.html         # Scripts common to all pages
    |         |
    |         |-- layouts/                   # Master pages
    |         |    |-- base-fullscreen.html  # Used by Authentication pages
-   |         |    |-- base.html             # Used by common pages
+   |         |    ┕-- base.html             # Used by common pages
    |         |
    |         |-- accounts/                  # Authentication pages
    |         |    |-- login.html            # Login page
-   |         |    |-- register.html         # Register page
+   |         |    ┕-- register.html         # Register page
    |         |
-   |         |-- home/                      # UI Kit Pages
+   |         ┕-- home/                      # UI (html) Pages
+   |              |-- sw                    # 소프트웨어 기능 상세 페이지 디렉토리
+   |              |-- dataset               # 데이터셋 상세 페이지 디렉토리
    |              |-- index.html            # Index page (메인페이지 - 대쉬보드)
-   |              |-- 404-page.html         # 404 page
    |              |-- sw.html               # 소프트웨어 기능 페이지
    |              |-- dataset.html          # 데이터셋 페이지
    |              |-- empirical_case.html   # 실증 사례 페이지
-   |              |-- *.html                # All other pages
+   |              ┕-- *.html                # All other pages
    |
    |-- requirements.txt                     # Development modules - SQLite storage
    |
