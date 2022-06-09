@@ -1,5 +1,6 @@
 # Web-Django-Demo
 
+- 메뉴얼 및 설명 : [다운로드](https://github.com/KimHyeongGoo/MANU_dashboard/raw/main/dashboard.pptx)
 
 ## 실행법
 
